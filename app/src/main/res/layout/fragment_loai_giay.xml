@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+tools:context=".fragment.LoaiGiayFragment"
+android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+            <com.google.android.material.textfield.TextInputLayout
+                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8.5"
+                android:layout_marginTop="10dp"
+                app:endIconMode="clear_text"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="#56b1bf"
+                app:boxStrokeWidthFocused="3dp"
+                app:helperTextTextColor="#FF0000"
+                app:hintTextColor="#56b1bf"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_search_loaiGiay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="SEARCH"
+                    android:textSize="20dp"
+                    android:inputType="text"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:id="@+id/img_search_loaiGiay"
+                android:src="@drawable/timkiem50x50" />
+        </LinearLayout>
+
+    <ListView
+        android:divider="@null"
+        android:dividerHeight="15dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/lvLoaiGiay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/fab_LG"
+    android:backgroundTint="#56b1bf"
+    android:layout_gravity="bottom|right"
+    android:layout_margin="16dp"
+    android:src="@drawable/ic_baseline_add_24" />
+
+
+</FrameLayout>

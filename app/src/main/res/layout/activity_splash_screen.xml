@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.thoitrang.SplashScreenActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <TextView
+        android:layout_marginTop="140dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pacifico_regular"
+        android:gravity="center_horizontal"
+        android:text="Thời                            Trang"
+        android:textColor="#d73a31"
+        android:textSize="35dp" />
+
+    <ImageView
+        android:id="@+id/img_bong_giay"
+        android:layout_width="270dp"
+        android:layout_height="350dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="-180dp"
+        android:src="@drawable/ao" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/img_tuGiay"
+        android:src="@drawable/shop"
+        android:layout_gravity="center" />
+
+
+    <!--    <TextView-->
+<!--        android:id="@+id/tv_loiChao"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:fontFamily="@font/pacifico_regular"-->
+<!--        android:text="Luôn bên bạn trên mọi đường chặng đường"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="23dp" />-->
+
+
+</LinearLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+
+    <item
+        android:id="@+id/nav_HoaDon"
+        android:icon="@drawable/icon_hoadon"
+        android:title="Hóa Đơn" />
+
+    <item
+        android:id="@+id/nav_LoaiGiay"
+        android:icon="@drawable/icon_loaigiay"
+        android:title="Loại "/>
+
+    <item
+        android:id="@+id/nav_Giay"
+        android:icon="@drawable/icon_giay"
+        android:title="Sản Phẩm"/>
+    <item
+        android:id="@+id/nav_KhachHang"
+        android:icon="@drawable/icon_khachhang"
+        android:title="Khách Hàng"/>
+
+    <item android:title="Thông Kê">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_sub_Top"
+                android:icon="@drawable/icon_top"
+                android:title="5 Sản phẩm Mua Nhiều Nhất"/>
+
+            <item
+                android:id="@+id/nav_sub_DoanhThu"
+                android:icon="@drawable/icon_doanhthu"
+                android:title="Doanh Thu"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="Người Dùng">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_sub_NhanVien"
+                android:icon="@drawable/ic_baseline_support_agent_24"
+                android:visible="false"
+                android:title="Nhân Viên"/>
+            <item
+                android:id="@+id/nav_sub_Pass"
+                android:icon="@drawable/icon_change_pass"
+                android:title="Đổi Mật Khẩu"/>
+            <item
+                android:id="@+id/nav_sub_Logout"
+                android:icon="@drawable/icon_exit"
+                android:title="Đăng Xuất"/>
+            </group>
+        </menu>
+    </item>
+</group>
+</menu>

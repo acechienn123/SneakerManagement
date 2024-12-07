@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/doanh_thu_png_hai" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="DOANH THU"
+            android:fontFamily="@font/pacifico_regular"
+            android:textSize="30dp"
+            android:textColor="#08708a"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:endIconMode="clear_text"
+            app:helperText="YYYY-MM-DD"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#56b1bf"
+            app:boxStrokeWidthFocused="2dp"
+            app:helperTextTextColor="#FF0000"
+            app:hintTextColor="#56b1bf" >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edtuNgay_DT"
+                android:inputType="textCapWords"
+                android:textColor="@color/black"
+                android:hint="Từ ngày" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:endIconMode="clear_text"
+            app:helperText="YYYY-MM-DD"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="#56b1bf"
+            app:boxStrokeWidthFocused="2dp"
+            app:helperTextTextColor="#FF0000"
+            app:hintTextColor="#56b1bf" >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eddenNgay_DT"
+                android:inputType="textCapWords"
+                android:textColor="@color/black"
+                android:hint="Đến Ngày" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:fontFamily="@font/pacifico_regular"
+            android:id="@+id/tvdoanhThu"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#08708a"
+            android:gravity="center"
+            android:textSize="32dp" />
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:id="@+id/btndoanhThu"
+            android:backgroundTint="#d73a31"
+            android:text="TÍNH TỔNG"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"/>
+    </LinearLayout>
+
+</ScrollView>

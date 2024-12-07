@@ -1,0 +1,2 @@
+rootProject.name = "TBDS_SNEAKERS"
+include ':app'

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/ting"
+    android:layout_height="wrap_content"
+    android:weightSum="10"
+    android:layout_marginTop="20dp">
+
+    <ImageView
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/img_giay_item" />
+
+<LinearLayout
+    android:layout_marginLeft="5dp"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_weight="10"
+    android:layout_marginTop="5dp">
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/tv_tenGiay_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên:"
+        android:textSize="22dp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="6">
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tv_maLoaiGiay_item"
+            android:layout_width="0dp"
+            android:layout_weight="3.5"
+            android:layout_height="match_parent"
+            android:text="Mã Loại Giày:"
+            android:textSize="13dp"
+            android:textColor="@color/black" />
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/tv_maGiay_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.5"
+            android:text="Mã Giày:"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <TextView
+          android:textStyle="bold"
+          android:layout_marginTop="3dp"
+          android:id="@+id/tv_giaMua_item"
+          android:layout_width="190dp"
+          android:layout_height="wrap_content"
+          android:text="Giá Mua:"
+          android:textSize="13dp"
+          android:textColor="@color/black"/>
+    <TextView
+        android:textStyle="bold"
+        android:textSize="13dp"
+        android:layout_marginTop="3dp"
+        android:id="@+id/tv_soLuongG_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Số Lượng:"
+        android:textColor="@color/black"/>
+    <TextView
+        android:textSize="13dp"
+        android:layout_marginTop="3dp"
+        android:id="@+id/tv_moTa_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mô Tả:"
+        android:textColor="@color/black"/>
+
+</LinearLayout>
+
+    <ImageView
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="3dp"
+        android:id="@+id/img_delete_giay_item"
+        android:layout_width="37dp"
+        android:layout_height="37dp"
+        android:layout_weight="1"
+        android:src="@drawable/delete_item_giay" />
+
+</LinearLayout>

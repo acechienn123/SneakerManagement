@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/ting"
+    android:layout_height="wrap_content"
+    android:weightSum="10"
+    android:layout_marginTop="20dp">
+
+    <LinearLayout
+        android:padding="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="9.5">
+
+    <TextView
+        android:id="@+id/tvMaHD_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mã Hóa Đơn:"
+        android:textSize="17dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTenKH_HD_item"
+        android:text="Tên Khách Hàng:"
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:id="@+id/tvTenGiay_HD_item"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Tên:"
+            android:textSize="17dp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:weightSum="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvGiaMua_HD_item"
+            android:layout_weight="2"
+            android:textSize="17dp"
+            android:text="Giá Mua:"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvTrangThai_HD_item"
+            android:layout_weight="2"
+            android:textSize="17dp"
+            android:text="Trạng Thái:"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvNgayMua_HD_item"
+            android:layout_marginTop="5dp"
+            android:textSize="17dp"
+            android:text="Ngày Mua:"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_delete_HD"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:src="@drawable/delete_item_giay" />
+
+
+</LinearLayout>
+
