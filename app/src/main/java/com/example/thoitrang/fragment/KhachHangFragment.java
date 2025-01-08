@@ -108,27 +108,37 @@ KhachHang item;
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Tạo một đối tượng mới KhachHang để lưu thông tin khách hàng
                 item = new KhachHang();
+                // Lấy giá trị từ các trường EditText và gán vào các thuộc tính tương ứng của item
                 item.tenKH = edTenKH.getText().toString();
                 item.diaChi = eddiaChiKH.getText().toString();
                 item.sdtKH = edSDTKH.getText().toString();
-                if(validate()>0){
-                    if(type == 0){
+
+                // > 0 nếu hợp lệ và ngược lại
+                if(validate()>0){// Kiểm tra tính hợp lệ của dữ liệu nhập vào
+                    if(type == 0){ //type có 2 giá trị 0 và 1: 0 (thêm khách hàng), 1 (sửa khách hàng)
+                        // Gọi hàm insert() trong KhachHangDao với giá trị đầu vào item
+                        // Nếu chèn thành công sẽ trả về giá trị ID khách hàng = 1
                         if(dao.insert(item)>0){
                             Toast.makeText(context,"Thêm Thành Công", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(context,"Thêm Thất Bại",Toast.LENGTH_SHORT).show();
                         }
                     }else{
+                        //  lấy giá trị văn bản mà người dùng nhập, chuyển thành một số nguyên (int)
+                        //  và gán giá trị này cho thuộc tính maKH của đối tượng item
                         item.maKH = Integer.parseInt(edMaKH.getText().toString());
+                        // Gọi hàm update() trong KhachHangDao với giá trị đầu vào item
+                        // Nếu sửa thành công sẽ trả về số lượng bản ghi được cập nhật = 1
                         if(dao.update(item)>0){
                             Toast.makeText(context,"Cập Nhật Thành Công", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(context,"Cập Nhật Thất Bại",Toast.LENGTH_SHORT).show();
                         }
                     }
-                    capNhatLv();
-                    dialog.dismiss();
+                    capNhatLv();// Cập nhật lại listView
+                    dialog.dismiss(); // Tự động đống cửa sổ
                 }
             }
         });
@@ -136,20 +146,28 @@ KhachHang item;
     }
 
     public void xoaKhachHang(final String Id){
+        // Tạo AlertDialog.Builder để xây dựng hộp thoại xác nhận
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        // Thiết lập tiêu đề
         builder.setTitle("Delete");
+        // Thiết lập nội dung thông báo
         builder.setMessage("Bạn có muốn xóa không?");
+        // Nngười dùng có thể bấm ngoài khu vực hộp thoại để đóng
         builder.setCancelable(true);
+        // Thiết lập nút "Yes" để xác nhận xóa
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                // Gọi phương thức delete() trong KhachHangDao
                 dao.delete(Id);
+                // Cập nhật lại danh sách khách hàng
                 capNhatLv();
                 Snackbar.make(getView(),"Bạn đã xóa thành công",Snackbar.LENGTH_LONG).show();
+                // Đóng hộp thoại sau khi người dùng xác nhận xóa
                 dialog.cancel();
             }
         });
-
+        // Thiết lập nút "No" để người dùng có thể hủy bỏ hành động xóa
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

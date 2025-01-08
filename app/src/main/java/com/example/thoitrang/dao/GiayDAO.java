@@ -36,7 +36,8 @@ public class GiayDAO {
         values.put("soLuong",ob.soLuong);
         values.put("maLoai", ob.maLoai);
         values.put("hinh", ob.hinh);
-        return db.update("Giay",values,"maGiay=?", new String[]{String.valueOf(ob.maGiay)});
+        return db.update("Giay",values,"maGiay=?",
+                new String[]{String.valueOf(ob.maGiay)});
     }
     public int delete(String id){
         return db.delete("Giay","maGiay=?", new String[]{id});

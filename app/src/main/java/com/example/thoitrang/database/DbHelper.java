@@ -51,7 +51,7 @@ public class DbHelper extends SQLiteOpenHelper {
                         "soLuong TEXT NOT NULL," +
                         "maLoai INTEGER REFERENCES LoaiGiay(maLoai), "+
                         "hinh BLOB NOT NULL )";
-        db.execSQL(tableGiay);
+                db.execSQL(tableGiay);
 
 //      Tao bang HOADON
         String tableHoaDon=

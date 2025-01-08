@@ -32,7 +32,8 @@ public class KhachHangDAO {
         values.put("tenKH",ob.tenKH);
         values.put("diaChi",ob.diaChi);
         values.put("sdtKH",ob.sdtKH);
-        return db.update("KhachHang",values,"maKH=?", new String[]{String.valueOf(ob.maKH)});
+        return db.update("KhachHang",values,"maKH=?",
+                new String[]{String.valueOf(ob.maKH)});
     }
 
     public int delete(String id){

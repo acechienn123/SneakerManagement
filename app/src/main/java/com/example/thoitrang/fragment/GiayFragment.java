@@ -160,13 +160,15 @@ public class GiayFragment extends Fragment {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BitmapDrawable bitmapDrawable = (BitmapDrawable) img_anh.getDrawable();
-                Bitmap bitmap = bitmapDrawable.getBitmap();
-                ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);
-                byte[] hinhAnh = byteArray.toByteArray();
-//===========
+                // Lấy hình ảnh từ ImageView và chuyển đổi thành Bitmap
+                BitmapDrawable bitmapDrawable = (BitmapDrawable) img_anh.getDrawable();// Lấy đối tượng Drawable từ ImageView
+                Bitmap bitmap = bitmapDrawable.getBitmap(); // Chuyển đổi Drawable thành Bitmap
+                ByteArrayOutputStream byteArray = new ByteArrayOutputStream();// Tạo một ByteArrayOutputStream để lưu trữ dữ liệu byte
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArray);// Nén hình ảnh thành định dạng PNG với chất lượng 100%
+                byte[] hinhAnh = byteArray.toByteArray();// Chuyển đổi dữ liệu hình ảnh thành mảng byte
+                // Tạo đối tượng Giay để lưu trữ thông tin giày
                 item = new Giay();
+                // Gán các thông tin từ các EditText và lưu vào đối tượng item
                 item.maLoai = maLoai;
                 item.setMaLoai(maLoai);
                 item.tenGiay = edTenGiay.getText().toString();
@@ -174,25 +176,26 @@ public class GiayFragment extends Fragment {
                 item.moTa = edMoTa.getText().toString();
                 item.soLuong = edSoLuong.getText().toString();
                 item.hinh = hinhAnh;
-                if(valible()>0){
-                    if(type == 0){
-                        if(dao.insert(item)>0){
+                if(valible()>0){ // Kiểm tra tính hợp lệ của dữ liệu nhập vào
+                    if(type == 0){ //type có 2 giá trị 0 và 1: 0 (thêm sản phẩm), 1 (sửa sản phẩm)
+                        if(dao.insert(item)>0){ // Nếu chèn thành công sẽ trả về giá trị ID sản phẩm = 1
                             Toast.makeText(context,"Thêm Thành Công",Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(context,"Thêm Thất Bại",Toast.LENGTH_SHORT).show();
                         }
-
                     }else{
-
                         item.maGiay = Integer.parseInt(edMaGiay.getText().toString());
+                        //  và gán giá trị người dùng nhập cho thuộc tính maGiay của đối tượng item chuyển thành một số nguyên (int)
                         if(dao.update(item)>0){
+                            //Gọi phương thức inset() trong KhachHangDao với giá trị là truyền vào item
+                            // Nếu sửa thành công sẽ trả về số lượng bản ghi được cập nhật = 1
                             Toast.makeText(context,"Cập Nhật Thành Công",Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(context,"Cập Nhật Thất Bại",Toast.LENGTH_SHORT).show();
                         }
                     }
-                    capNhatLv();
-                    dialog.dismiss();
+                    capNhatLv(); // Cập nhật lại listView
+                    dialog.dismiss(); // Tự động đống cửa sổ
                 }
             }
         });
@@ -225,19 +228,28 @@ public class GiayFragment extends Fragment {
 
 
     public void xoaGiay(final String Id){
+        // Tạo AlertDialog.Builder để xây dựng hộp thoại xác nhận
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        // Thiết lập tiêu đề
         builder.setTitle("Delete");
+        // Thiết lập nội dung thông báo
         builder.setMessage("Bạn có muốn xóa không?");
+        // Nngười dùng có thể bấm ngoài khu vực hộp thoại để đóng
         builder.setCancelable(true);
+        // Thiết lập nút "Yes" để xác nhận xóa,
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                // Gọi phương thức delete() trong GiayDAO
                 dao.delete(Id);
+                // Cập nhật lại danh sách giày
                 capNhatLv();
                 Snackbar.make(getView(),"Bạn đã xóa thành công",Snackbar.LENGTH_LONG).show();
+                // Đóng hộp thoại sau khi người dùng xác nhận xóa
                 dialog.cancel();
             }
         });
+        // Thiết lập nút "No" để người dùng có thể hủy bỏ hành động xóa
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

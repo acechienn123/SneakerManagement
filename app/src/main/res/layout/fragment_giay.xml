@@ -35,14 +35,15 @@ android:padding="10dp">
             app:helperTextTextColor="#FF0000"
             app:hintTextColor="#56b1bf"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ed_search_Giay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="SEARCH "
-                android:textSize="20dp"
                 android:inputType="text"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="20dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageView
